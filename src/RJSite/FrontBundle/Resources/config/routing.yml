@@ -1,0 +1,8 @@
+rj_site_front.page.homepage:
+    path:      /
+    defaults:
+        _controller: RJSiteFrontBundle:Page:homepage
+rj_site_front.cv.view:
+    path:      /cv/
+    defaults:
+        _controller: RJSiteFrontBundle:CV:view

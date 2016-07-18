@@ -1,0 +1,8 @@
+rj_site_contact.page.view:
+    path:      /
+    defaults:
+        _controller: RJSiteContactBundle:Page:view
+rj_site_contact.page.request:
+    path:      /request/
+    defaults:
+        _controller: RJSiteContactBundle:Page:request

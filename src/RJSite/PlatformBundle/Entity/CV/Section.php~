@@ -1,0 +1,85 @@
+<?php
+
+namespace RJSite\PlatformBundle\Entity\CV;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Section
+ *
+ * @ORM\Table(name="cv\section")
+ * @ORM\Entity(repositoryClass="RJSite\PlatformBundle\Repository\CV\SectionRepository")
+ */
+class Section
+{
+    /**
+     * @ORM\ManyToOne(targetEntity="OC\PlatformBundle\Entity\CV\Profile", inversedBy="sections")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $profile;
+    
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="string", length=255)
+     */
+    private $title;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text", nullable=true)
+     */
+    private $description;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="link", type="string", length=255, nullable=true)
+     */
+    private $link;
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set title
+     *
+     * @param string $title
+     *
+     * @return Profile
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+}
+

@@ -1,0 +1,39 @@
+{# src/RJSite/AdminBundle/Resources/views/CV/add.html.twig #}
+
+{% extends "RJSiteAdminBundle::layout.html.twig" %}
+
+{% block title %}
+    Modifier un Curriculum Vitae - {{ parent() }}
+{% endblock %}
+
+{% block rjsite_admin_body %}
+
+<div class="container theme-showcase">
+    <div class="page-header">
+        <div class="pull-left">
+            <h2>Modification d'un Curiculum Vitae</h2>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="col-sm-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Mise à jour du profil</h3>
+            </div>
+            <div class="panel-body">
+            {{ include("RJSiteAdminBundle:CV:form.html.twig") }}
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">Gestion des sections</h3>
+            </div>
+            <div class="panel-body">
+            </div>
+        </div>
+    </div>
+    
+
+{% endblock %}

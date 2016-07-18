@@ -1,0 +1,31 @@
+{# src/RJSite/CoreBundle/Resources/views/layout.html.twig #}
+
+{% extends "::layout.html.twig" %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <style type="text/css">
+        body {
+            padding-top: 70px;
+            padding-bottom: 30px;
+        }
+    </style>
+{% endblock %}
+    
+{% block title %}
+    Admin Ju & Ron {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+    {{ render(controller("RJSiteAdminBundle:Page:mainmenu")) }}
+    
+    {% block rjsite_admin_body %}
+    {% endblock %}
+    
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('bundles/rjplatform/js/function.js') }}"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+{% endblock %}

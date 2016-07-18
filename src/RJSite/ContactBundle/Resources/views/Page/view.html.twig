@@ -1,0 +1,42 @@
+{# src/RJSite/ContactBundle/Resources/views/Page/view.html.twig #}
+
+{% extends "RJSiteFrontBundle::layout.html.twig" %}
+
+{% block title %}
+    Contactez-nous - {{ parent() }}
+{% endblock %}
+
+{% block rjsite_default_body %}
+
+    <div class="shipping">
+        <ul>
+            <li class="left-part">
+                <div>
+                    <h2 class="white bold-font"><span class="green">JU</span>STINE</h2>
+                    <p class='regular white'>
+                        a obtenu son Permis Vacances-Travail le 31 mai 2016. Ce permis lui donne le droit de travailler au Canada pendant 2 ans à partir de sons arrivée sur le territoire Canadien.
+                    </p>
+                    <p class='regular white'>
+                        Après 5 années passées dans des agences web. Elle est à la recherche d'un poste de directrice artistique digital.
+                    </p>
+                    <a class="btn" href="{{ path('rj_site_contact.page.request') }}">contacter Justine</a>
+                </div>
+            </li>
+            <li class="right-part">
+                <div>
+                    <h2 class="white bold-font"><span class="green">RON</span>AN</h2>
+                    <p class='regular white'>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                    <a class="btn" href="{{ path('rj_site_contact.page.request') }}">contacter Ronan</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+{% endblock %}

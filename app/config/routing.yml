@@ -1,3 +1,15 @@
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
+rj_site_admin:
+    resource: "@RJSiteAdminBundle/Resources/config/routing.yml"
+    prefix:   /admin/
+
+rj_site_front:
+    resource: "@RJSiteFrontBundle/Resources/config/routing.yml"
+    prefix:   /
+
+rj_site_contact:
+    resource: "@RJSiteContactBundle/Resources/config/routing.yml"
+    prefix:   /contact/
+    
+rj_site_platform:
+    resource: "@RJSitePlatformBundle/Resources/config/routing.yml"
+    prefix:   /

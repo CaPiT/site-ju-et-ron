@@ -1,0 +1,21 @@
+{# src/RJSite/AdminBundle/Resources/views/CV/add.html.twig #}
+
+{% extends "RJSiteAdminBundle::layout.html.twig" %}
+
+{% block title %}
+    Ajouter un Curriculum Vitae - {{ parent() }}
+{% endblock %}
+
+{% block rjsite_admin_body %}
+
+<div class="container theme-showcase">
+    <div class="page-header">
+        <div class="pull-left">
+            <h2>Ajouter un Curiculum Vitae</h2>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    
+    {{ include("RJSiteAdminBundle:CV:form.html.twig") }}
+
+{% endblock %}

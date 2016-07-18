@@ -1,0 +1,67 @@
+{# src/RJSite/AdminBundle/Resources/views/CV/list.html.twig #}
+
+{% extends "RJSiteAdminBundle::layout.html.twig" %}
+
+{% block title %}
+    Curriculum Vitae - {{ parent() }}
+{% endblock %}
+
+{% block rjsite_admin_body %}
+
+<div class="container theme-showcase">
+    <div class="page-header">
+        <div class="pull-left">
+            <h2>Gestion des Curiculum Vitae</h2>
+        </div>
+        <div class="pull-right">
+            <a href="{{ path('rj_site_admin.cv.add') }}" class="btn btn-lg btn-primary">Ajouter un profil</a>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    
+    <div class="">
+        {% if listProfiles is defined %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Date of Birth</th>
+                    <th>Function</th>
+                    <th>Description</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for profile in listProfiles %}
+                <tr>
+                    <td>{{ profile.id }}</td>
+                    <td>{{ profile.firstname }}</td>
+                    <td>{{ profile.lastname }}</td>
+                    <td>{{ profile.email }}</td>
+                    <td>{{ profile.dob|date('d/m/Y') }}</td>
+                    <td>{{ profile.function }}</td>
+                    <td>{{ profile.description|slice(0, 30) }} ...</td>
+                    <td><a class="btn btn-xs btn-warning" href="{{ path('rj_site_admin.cv.edit', {'id': profile.id}) }}">Edit</a></td>
+                    <td><a class="btn btn-xs btn-danger" href="{{ path('rj_site_admin.cv.delete', {'id': profile.id}) }}">Delete</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+            <h3>Aucun CV n'existe</h3>
+        {% endif %}
+    </div>
+    
+    <ul class="pagination">
+        {% for p in range(1, nbPages) %}
+        <li {% if p == page %} class="active" {% endif %}><a
+            href="{{ path('rj_site_admin.cv.list', {'page': p}) }}">{{ p }}</a></li>
+        {% endfor %}
+    </ul>
+</div>        
+    
+{% endblock %}

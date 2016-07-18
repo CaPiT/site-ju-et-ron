@@ -1,0 +1,38 @@
+rj_site_admin.page.dashboard:
+    path:      /
+    defaults:
+        _controller: RJSiteAdminBundle:Page:dashboard
+rj_site_admin.cv.list:
+    path:      /cv/{page}
+    defaults:
+        _controller: RJSiteAdminBundle:CV:list
+        page:        1
+        requirements:
+            page: \d*
+rj_site_admin.cv.add:
+    path:      /cv/add/
+    defaults:
+        _controller: RJSiteAdminBundle:CV:add
+
+rj_site_admin.cv.edit:
+    path:      /cv/edit/{id}
+    defaults:
+        _controller: RJSiteAdminBundle:CV:edit
+    requirements:
+        id: \d+
+
+rj_site_admin.cv.delete:
+    path:      /cv/delete/{id}
+    defaults:
+        _controller: RJSiteAdminBundle:CV:delete
+    requirements:
+        id: \d+
+        
+rj_site_admin.contact.list:
+    path:      /
+    defaults:
+        _controller: RJSiteAdminBundle:Page:dashboard
+rj_site_admin.configuration.list:
+    path:      /
+    defaults:
+        _controller: RJSiteAdminBundle:Page:dashboard

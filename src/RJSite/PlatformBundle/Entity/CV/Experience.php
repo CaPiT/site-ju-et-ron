@@ -54,21 +54,35 @@ class Experience
      * @ORM\Column(name="content", type="text")
      */
     private $content;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="link", type="string", length=255, nullable=true)
+     */
+    private $link;
     
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="start_date", type="datetime", nullable=true)
+     * @ORM\Column(name="start_date", type="date", nullable=true)
      */
     private $start_at;
     
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="end_date", type="datetime", nullable=true)
+     * @ORM\Column(name="end_date", type="date", nullable=true)
      */
     private $end_date;
 
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="position", type="integer", nullable=true)
+     */
+    private $position;
+    
     /**
      * Get id
      *
@@ -176,6 +190,30 @@ class Experience
     }
 
     /**
+     * Set link
+     *
+     * @param string $link
+     *
+     * @return Section
+     */
+    public function setLink($link)
+    {
+        $this->link = $link;
+    
+        return $this;
+    }
+    
+    /**
+     * Get link
+     *
+     * @return string
+     */
+    public function getLink()
+    {
+        return $this->link;
+    }
+    
+    /**
      * Set startAt
      *
      * @param \DateTime $startAt
@@ -226,11 +264,11 @@ class Experience
     /**
      * Set section
      *
-     * @param \OC\PlatformBundle\Entity\CV\Section $section
+     * @param \RJSite\PlatformBundle\Entity\CV\Section $section
      *
      * @return Experience
      */
-    public function setSection(\OC\PlatformBundle\Entity\CV\Section $section)
+    public function setSection(\RJSite\PlatformBundle\Entity\CV\Section $section)
     {
         $this->section = $section;
 
@@ -240,10 +278,34 @@ class Experience
     /**
      * Get section
      *
-     * @return \OC\PlatformBundle\Entity\CV\Section
+     * @return \RJSite\PlatformBundle\Entity\CV\Section
      */
     public function getSection()
     {
         return $this->section;
+    }
+
+    /**
+     * Set position
+     *
+     * @param integer $position
+     *
+     * @return Experience
+     */
+    public function setPosition($position)
+    {
+        $this->position = $position;
+
+        return $this;
+    }
+
+    /**
+     * Get position
+     *
+     * @return integer
+     */
+    public function getPosition()
+    {
+        return $this->position;
     }
 }

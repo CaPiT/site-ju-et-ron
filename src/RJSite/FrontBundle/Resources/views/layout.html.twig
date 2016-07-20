@@ -4,8 +4,10 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/rjplatform/css/styles.css') }}" media="screen" />
-    <link href='https://fonts.googleapis.com/css?family=Dosis:400,700,600' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Dosis:400,700,600'>
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/rjplatform/stylesheets/glide-core-min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/rjplatform/stylesheets/glide-theme-min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/rjplatform/stylesheets/styles.css') }}" media="screen" />
 {% endblock %}
     
 {% block title %}
@@ -17,14 +19,15 @@
     <div class="bg"></div>
     {{ render(controller("RJSiteFrontBundle:Page:mainmenu")) }}
     
-    <div class="wrapper">
-        {% block rjsite_default_body %}
-        {% endblock %}
-    </div>
+    {% block rjsite_default_body %}
+    {% endblock %}
+    
+    {{ render(controller("RJSiteFrontBundle:Page:languages")) }}
     
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
+    <script src="{{ asset('bundles/rjplatform/js/glide.min.js') }}"></script>
     <script src="{{ asset('bundles/rjplatform/js/function.js') }}"></script>
 {% endblock %}

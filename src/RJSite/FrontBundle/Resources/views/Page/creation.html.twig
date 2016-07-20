@@ -1,0 +1,77 @@
+{# src/RJSite/FrontBundle/Resources/views/Page/creation.html.twig #}
+
+{% extends "RJSiteFrontBundle::layout.html.twig" %}
+
+{% block title %}
+    Accueil - {{ parent() }}
+{% endblock %}
+
+{% block rjsite_default_body %}
+<div class="bg-color"></div>
+<div class="wrapper">
+    <div class="images">
+        <br/>
+        <img class="icon-images" src="{{ asset('bundles/rjplatform/images/icon-image.svg') }}" width="50" height="50"/>
+        <h2 class="title-desc semi-bold green mobile">IMAGES</h1>
+        <div id="Glide" class="glide">
+
+            <div class="glide__arrows">
+                <button class="glide__arrow prev" data-glide-dir="<">
+                    <svg id="arrow1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 535.03 705.28"><title>Vector Smart Object</title><path class="cls-1" d="M560.15,677.79A58.19,58.19,0,0,1,502,736c-10,0-16.31-2.61-27.44-7L66.29,441.43c-19-11.25-27.78-29.33-31.17-50.17v-5.85c3.39-20.83,12.19-38.91,31.17-50.17L474.51,47.74c11.14-4.44,17.47-7,27.44-7a58.19,58.19,0,0,1,58.2,58.2V677.79h0Z" transform="translate(-30.12 -35.71)"/></svg>
+                </button>
+                <button class="glide__arrow next" data-glide-dir=">">
+                    <svg id="arrow2" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 535.03 705.28"><title>Vector Smart Object</title><path class="cls-1" d="M35.12,98.91a58.19,58.19,0,0,1,58.19-58.2c10,0,16.31,2.61,27.44,7L529,335.26c19,11.25,27.78,29.33,31.17,50.17v5.85C556.76,412.1,548,430.19,529,441.44L120.76,729c-11.14,4.44-17.47,7-27.44,7a58.19,58.19,0,0,1-58.2-58.2V98.91h0Z" transform="translate(-30.12 -35.71)"/></svg>
+                </button>
+            </div>
+
+            <div class="glide__wrapper">
+                <ul class="glide__track">
+                    <!--First Slide -->
+                    <li class="glide__slide">
+                        <div class="content-desc">
+                            <p class="regular white medium-font">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
+                        </div>
+                        <div class="wrapper-images-desktop desktop">
+                            <img class="images-desktop" src="{{ asset('bundles/rjplatform/images/slider/zp-desktop.png') }}">
+                        </div>
+                        <div class="wrapper-images-tablet mobile">
+                            <img class="images-tablet" src="{{ asset('bundles/rjplatform/images/slider/zp-tablet.png') }}">
+                        </div>
+                        <div class="content-text">
+                            <p class="regular white medium-font">
+                                <span class="green">Zapa</span> - www.zapa.fr<br/>Mai 2016
+                            </p>
+                        </div>
+                    </li>
+                    
+                    <!--Second Slide -->
+                    <li class="glide__slide">
+                        <div class="content-desc">
+                            <p class="regular white medium-font">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
+                        </div>
+                        <div class="wrapper-images-desktop desktop">
+                            <img class="images-desktop" src="{{ asset('bundles/rjplatform/images/slider/fs-desktop.png') }}">
+                        </div>
+                        <div class="wrapper-images-tablet mobile">
+                            <img class="images-tablet" src="{{ asset('bundles/rjplatform/images/slider/fs-tablet.png') }}">
+                        </div>
+                        <div class="content-text">
+                            <p class="regular white medium-font">
+                                <span class="green">Father & Sons</span> - www.fatherandsons.fr<br/>Mai 2016
+                            </p>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
+            <!--Si bullets pagination-->
+{#             <div class="glide__bullets"></div> #}
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

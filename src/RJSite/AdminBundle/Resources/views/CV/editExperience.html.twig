@@ -1,0 +1,30 @@
+{# src/RJSite/AdminBundle/Resources/views/CV/editExperience.html.twig #}
+
+{% extends "RJSiteAdminBundle::layout.html.twig" %}
+
+{% block title %}
+    Modifier un Curriculum Vitae - {{ parent() }}
+{% endblock %}
+
+{% block rjsite_admin_body %}
+
+<div class="container theme-showcase">
+    <div class="page-header">
+        <div class="pull-left">
+            <h2>Modification d'un Curiculum Vitae</h2>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">Sections</h3>
+            </div>
+            <div class="panel-body">    
+            {{ form(form) }}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

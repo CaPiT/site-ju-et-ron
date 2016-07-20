@@ -10,11 +10,6 @@ use Symfony\Component\Validator\Constraints\Email;
 
 class PageController extends Controller
 {
-    public function viewAction()
-    {
-        return $this->render('RJSiteContactBundle:Page:view.html.twig');
-    }
-
     public function requestAction(Request $request)
     {
         $requestEntity = new RequestEntity();
@@ -37,8 +32,8 @@ class PageController extends Controller
                     $em->flush();
         
                     $request->getSession()->getFlashBag()->add('notice', 'Annonce bien enregistrée.');
-        
-                    return $this->redirectToRoute('rj_site_contact.view');
+                    
+                    $form = $this->createForm(RequestType::class, new RequestEntity());
                 } else {
                     $request->getSession()->getFlashBag()->add('error', $errorList);
                 }

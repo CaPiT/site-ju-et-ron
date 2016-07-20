@@ -303,11 +303,11 @@ class Profile
     /**
      * Add section
      *
-     * @param \OC\PlatformBundle\Entity\CV\Section $section
+     * @param \RJSite\PlatformBundle\Entity\CV\Section $section
      *
      * @return Profile
      */
-    public function addSection(\OC\PlatformBundle\Entity\CV\Section $section)
+    public function addSection(\RJSite\PlatformBundle\Entity\CV\Section $section)
     {
         $this->sections[] = $section;
 
@@ -317,9 +317,9 @@ class Profile
     /**
      * Remove section
      *
-     * @param \OC\PlatformBundle\Entity\CV\Section $section
+     * @param \RJSite\PlatformBundle\Entity\CV\Section $section
      */
-    public function removeSection(\OC\PlatformBundle\Entity\CV\Section $section)
+    public function removeSection(\RJSite\PlatformBundle\Entity\CV\Section $section)
     {
         $this->sections->removeElement($section);
     }

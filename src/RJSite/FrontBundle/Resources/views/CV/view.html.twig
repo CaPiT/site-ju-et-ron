@@ -7,7 +7,12 @@
 {% endblock %}
 
 {% block rjsite_default_body %}
-
+<div class="bg-color"></div>
+<div class="wrapper">
+    <div class="mobile title-description">
+        <img class="icon-images" src="{{ asset('bundles/rjplatform/images/icon-desc.svg') }}" width="50" height="50"/>
+        <h2 class="title-desc semi-bold green">DESCRIPTION</h2>
+    </div>
     <div class="description">
         <ul>
             <li class="left-part">
@@ -156,16 +161,22 @@
 
                     <p class="regular medium-font green septop">LOGICIELS & TECHNOLOGIES</p>
 
-                    <p class="medium-font regular white">Adobe Photoshop</p>
-                    <p class="medium-font regular white">Adobe Indesign</p>
-                    <p class="medium-font regular white">Adobe Illustrator</p>
-                    <p class="medium-font regular white">HTML / CSS</p>
-                    <p class="medium-font regular white">Pack Office</p>
+                    <p class="para-soft medium-font regular white">Adobe Photoshop</p>
+                    <div class="soft photoshop"></div>
+                    <p class="para-soft medium-font regular white">Adobe Indesign</p>
+                    <div class="soft indesign"></div>
+                    <p class="para-soft medium-font regular white">Adobe Illustrator</p>
+                    <div class="soft illustrator"></div>
+                    <p class="para-soft medium-font regular white">HTML / CSS</p>
+                    <div class="soft html"></div>
+                    <p class="para-soft medium-font regular white">Pack Office</p>
+                    <div class="soft office"></div>
 
                     <!-- 10e paragraphe-->
 
-                    <a class="btn" href="{{ path('rj_site_contact.page.request') }}">contacter Justine</a>
-
+                    <div class="septop">
+                         <a class="btn" href="#">contacter Justine</a>
+                    </div>
                 </div>
             </li>
 
@@ -180,7 +191,9 @@
                     arma illi cumrogredi debeat.<br/>
                     </p>
                 </div>
+                
                 {{ render(controller("RJSiteFrontBundle:CV:menu")) }}
+                
             </li>
 
             <li class="right-part">
@@ -384,11 +397,13 @@
 
                     <!-- 10e paragraphe-->
 
-                    <a class="btn" href="{{ path('rj_site_contact.page.request') }}">contacter Ronan</a>
-
+                    <div class="septop">
+                        <a href="#" class="btn">contacter Ronan </a>
+                    </div>
                 </div>
             </li>
         
     </div>
+</div>
 
 {% endblock %}

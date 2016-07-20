@@ -2,6 +2,14 @@ rj_site_front.page.homepage:
     path:      /
     defaults:
         _controller: RJSiteFrontBundle:Page:homepage
+rj_site_front.page.creation:
+    path:      /creation/
+    defaults:
+        _controller: RJSiteFrontBundle:Page:creation
+rj_site_front.page.description:
+    path:      /description/
+    defaults:
+        _controller: RJSiteFrontBundle:Page:description
 rj_site_front.cv.view:
     path:      /cv/
     defaults:

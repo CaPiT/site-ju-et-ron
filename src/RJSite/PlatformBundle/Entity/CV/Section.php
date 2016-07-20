@@ -3,6 +3,7 @@
 namespace RJSite\PlatformBundle\Entity\CV;
 
 use Doctrine\ORM\Mapping as ORM;
+use RJsite\PlatformBundle\Entity\CV\Profile as Profile;
 
 /**
  * Section
@@ -45,14 +46,14 @@ class Section
      * @ORM\Column(name="description", type="text", nullable=true)
      */
     private $description;
-    
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="link", type="string", length=255, nullable=true)
-     */
-    private $link;
 
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="position", type="integer", nullable=true)
+     */
+    private $position;
+    
     /**
      * Get id
      *
@@ -112,37 +113,13 @@ class Section
     }
 
     /**
-     * Set link
-     *
-     * @param string $link
-     *
-     * @return Section
-     */
-    public function setLink($link)
-    {
-        $this->link = $link;
-
-        return $this;
-    }
-
-    /**
-     * Get link
-     *
-     * @return string
-     */
-    public function getLink()
-    {
-        return $this->link;
-    }
-
-    /**
      * Set profile
      *
-     * @param \OC\PlatformBundle\Entity\CV\Profile $profile
+     * @param \RJSite\PlatformBundle\Entity\CV\Profile $profile
      *
      * @return Section
      */
-    public function setProfile(\OC\PlatformBundle\Entity\CV\Profile $profile)
+    public function setProfile(Profile $profile)
     {
         $this->profile = $profile;
 
@@ -152,10 +129,75 @@ class Section
     /**
      * Get profile
      *
-     * @return \OC\PlatformBundle\Entity\CV\Profile
+     * @return \RJSite\PlatformBundle\Entity\CV\Profile
      */
     public function getProfile()
     {
         return $this->profile;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->experiences = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add experience
+     *
+     * @param \RJSite\PlatformBundle\Entity\CV\Experience $experience
+     *
+     * @return Section
+     */
+    public function addExperience(\RJSite\PlatformBundle\Entity\CV\Experience $experience)
+    {
+        $this->experiences[] = $experience;
+
+        return $this;
+    }
+
+    /**
+     * Remove experience
+     *
+     * @param \RJSite\PlatformBundle\Entity\CV\Experience $experience
+     */
+    public function removeExperience(\RJSite\PlatformBundle\Entity\CV\Experience $experience)
+    {
+        $this->experiences->removeElement($experience);
+    }
+
+    /**
+     * Get experiences
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getExperiences()
+    {
+        return $this->experiences;
+    }
+
+    /**
+     * Set position
+     *
+     * @param integer $position
+     *
+     * @return Section
+     */
+    public function setPosition($position)
+    {
+        $this->position = $position;
+
+        return $this;
+    }
+
+    /**
+     * Get position
+     *
+     * @return integer
+     */
+    public function getPosition()
+    {
+        return $this->position;
     }
 }

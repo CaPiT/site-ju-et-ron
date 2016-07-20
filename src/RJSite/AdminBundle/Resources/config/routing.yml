@@ -1,3 +1,4 @@
+#Admin Dashboard
 rj_site_admin.page.dashboard:
     path:      /
     defaults:
@@ -9,6 +10,8 @@ rj_site_admin.cv.list:
         page:        1
         requirements:
             page: \d*
+
+#Cirruculum Vitae
 rj_site_admin.cv.add:
     path:      /cv/add/
     defaults:
@@ -27,7 +30,47 @@ rj_site_admin.cv.delete:
         _controller: RJSiteAdminBundle:CV:delete
     requirements:
         id: \d+
+#Section
+rj_site_admin.cv.section.add:
+    path:      /cv/section/add/{profile_id}
+    defaults:
+        _controller: RJSiteAdminBundle:CV:addSection
+    requirements:
+        id: \d+
+rj_site_admin.cv.section.edit:
+    path:      /cv/section/edit/{id}
+    defaults:
+        _controller: RJSiteAdminBundle:CV:editSection
+    requirements:
+        id: \d+
+
+rj_site_admin.cv.section.delete:
+    path:      /cv/section/delete/{id}
+    defaults:
+        _controller: RJSiteAdminBundle:CV:deleteSection
+    requirements:
+        id: \d+     
+#Experience
+rj_site_admin.cv.experience.add:
+    path:      /cv/experience/add/{section_id}
+    defaults:
+        _controller: RJSiteAdminBundle:CV:addExperience
+    requirements:
+        id: \d+
+rj_site_admin.cv.experience.edit:
+    path:      /cv/experience/edit/{id}
+    defaults:
+        _controller: RJSiteAdminBundle:CV:editExperience
+    requirements:
+        id: \d+
+rj_site_admin.cv.experience.delete:
+    path:      /cv/experience/delete/{id}
+    defaults:
+        _controller: RJSiteAdminBundle:CV:deleteExperience
+    requirements:
+        id: \d+
         
+#Other
 rj_site_admin.contact.list:
     path:      /
     defaults:

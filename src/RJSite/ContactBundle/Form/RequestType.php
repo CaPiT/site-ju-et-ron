@@ -20,9 +20,9 @@ class RequestType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('email', EmailType::class)
-            ->add('object', TextType::class)
-            ->add('message', TextareaType::class)
+            ->add('email', EmailType::class, array('attr' => array('placeholder' => 'Email')))
+            ->add('object', TextType::class, array('attr' => array('placeholder' => 'Objet')))
+            ->add('message', TextareaType::class, array('attr' => array('placeholder' => 'Message')))
 //             ->add('created_at', DateTimeType::class)
             ->add('save', SubmitType::class)
         ;

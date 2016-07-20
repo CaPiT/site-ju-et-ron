@@ -1,0 +1,6 @@
+{# src/RJSite/FrontBundle/Resources/views/Page/languages.html.twig #}
+<div class="select-language desktop">
+    {% for item in languages %}
+    <a class="bold {{ item.class }}" href="{{ item.link }}">{{ item.title }}</a>
+    {% endfor %}
+</div>

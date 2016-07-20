@@ -1,27 +1,33 @@
-{# src/RJSite/ContactBundle/Resources/views/Page/view.html.twig #}
+{# src/RJSite/FrontBundle/Resources/views/Page/description.html.twig #}
 
 {% extends "RJSiteFrontBundle::layout.html.twig" %}
 
 {% block title %}
-    Contactez-nous - {{ parent() }}
+    Description - {{ parent() }}
 {% endblock %}
 
 {% block rjsite_default_body %}
-
+<div class="bg-color"></div>
+<div class="wrapper">
     <div class="shipping">
+        <div class="mobile title-shipping">
+            <div class="icon-plane"><img class="icon-images" src="{{ asset('bundles/rjplatform/images/icon-plane.svg') }}" width="50" height="50"/></div>
+            <h2 class="title-desc semi-bold green">SHIPPING POLICY</h2>
+        </div>
         <ul>
             <li class="left-part">
                 <div>
                     <h2 class="white bold-font"><span class="green">JU</span>STINE</h2>
                     <p class='regular white'>
-                        a obtenu son Permis Vacances-Travail le 31 mai 2016. Ce permis lui donne le droit de travailler au Canada pendant 2 ans à partir de sons arrivée sur le territoire Canadien.
+                        a obtenu son Permis Vacannces-Travail le 31 mai 2016. Ce permis lui donne le droit de travailler au Canada pendant 2 ans à partir de sons arrivée sur le territoire Canadien.
                     </p>
                     <p class='regular white'>
                         Après 5 années passées dans des agences web. Elle est à la recherche d'un poste de directrice artistique digital.
                     </p>
-                    <a class="btn" href="{{ path('rj_site_contact.page.request') }}">contacter Justine</a>
+                    <button class="btn">contacter Justine</button>
                 </div>
             </li>
+            <div class="icon-plane icon-plane-2 mobile"><img class="icon-images" src="{{ asset('bundles/rjplatform/images/icon-plane.svg') }}" width="50" height="50"/></div>
             <li class="right-part">
                 <div>
                     <h2 class="white bold-font"><span class="green">RON</span>AN</h2>
@@ -33,10 +39,10 @@
                         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </p>
-                    <a class="btn" href="{{ path('rj_site_contact.page.request') }}">contacter Ronan</a>
+                    <button class="btn">contacter Ronan</button>
                 </div>
             </li>
         </ul>
     </div>
-
+</div>
 {% endblock %}

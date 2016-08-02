@@ -17,6 +17,7 @@ class CVController extends AdminController
 {
     public function listAction($page)
     {
+//     	return new Response($page);
         if ($page < 1) {
             throw new NotFoundHttpException('Page "'.$page.'" inexistante.');
         }
@@ -31,9 +32,11 @@ class CVController extends AdminController
     
         $nbPages = ceil(count($listProfiles) / $nbPerPage);
         // Si la page n'existe pas, on retourne une 404
-        if ($page > $nbPages) {
-            throw $this->createNotFoundException("La page ".$page." n'existe pas.");
-        }
+        
+//         return new Response($page . ' - ' . $nbPages);
+//         if ($page > $nbPages) {
+//             throw $this->createNotFoundException("La page ".$page." n'existe pas.");
+//         }
     
         // L'appel de la vue ne change pas
         return $this->render('RJSiteAdminBundle:CV:list.html.twig', array(
@@ -156,7 +159,6 @@ class CVController extends AdminController
     
     public function editSectionAction($id, Request $request)
     {
-        // is it an Ajax request?
         $response = "Error";
         if ($isAjax = $request->isXmlHttpRequest()) {
            if ($params = $request->request->get('params')) {
@@ -262,8 +264,9 @@ class CVController extends AdminController
         }
         //         $profile->getServices();
         return $this->render('RJSiteAdminBundle:CV:editExperience.html.twig', array(
-            'profile' => $profile,
-            'form'   => $form->createView(),
+            'profile' 	=> $profile,
+        	'experience' => $experience,
+            'form'   	=> $form->createView(),
         ));
     }
     
@@ -271,13 +274,13 @@ class CVController extends AdminController
     {
         $em = $this->getDoctrine()->getManager();
     
-        $profile = $em->getRepository('RJSitePlatformBundle:CV\Profile')->find($id);
+        $experience = $em->getRepository('RJSitePlatformBundle:CV\Experience')->find($id);
     
-        if (null === $profile) {
-            throw new NotFoundHttpException("Le Curriculum Vitae avec l'id ".$id." n'existe pas.");
+        if (null === experience) {
+            throw new NotFoundHttpException("L'experience avec l'id ".$id." n'existe pas.");
         }
     
-        $em->remove($profile);
+        $em->remove(experience);
         $em->flush();
     
         $request->getSession()->getFlashBag()->add('info', "L'annonce a bien été supprimée.");

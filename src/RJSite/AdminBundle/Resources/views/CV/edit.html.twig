@@ -26,12 +26,67 @@
         </div>
     </div>
     <div class="col-sm-6">
+    	{% if sectionForms is defined %}
+    	{% for sectionForm in sectionForms %}
         <div class="panel panel-info">
             <div class="panel-heading">
-                <h3 class="panel-title">Sections</h3>
+                <h3 class="panel-title">Modifier la section '{{ sectionForm.vars.value.title }}'</h3>
             </div>
             <div class="panel-body">
-            {% if profile.sections is defined %}
+            
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>	</th>
+                            <th>Titre de la Section</th>
+                            <th>Position</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    
+                        {{ form_start(sectionForm, {'attr': {'class': 'form-horizontal section-forms', 'id' : 'section-form-' ~ sectionForm.vars.value.id, 'data-form-id': sectionForm.vars.value.id,
+                            'action': path('rj_site_admin.cv.section.edit', {'id': sectionForm.vars.value.id}), 'method': 'POST'}}) }}
+                        <tr class="section-block-{{ sectionForm.vars.value.id }}">
+{#                             <td></td>#}
+                            <td colspan="2">{{ form_widget(sectionForm.title, {'id' : 'title-' ~ sectionForm.vars.value.id}) }}</td>
+                            <td>{{ form_widget(sectionForm.position, {'id' : 'position-' ~ sectionForm.vars.value.id}) }}</td>
+                            <td>
+                                {{ form_widget(sectionForm.save, {'attr': {'class': 'btn btn-xs btn-success'}, 'id' : 'save-section-' ~ sectionForm.vars.value.id}) }}
+                                <a class="btn btn-xs btn-danger sections-delete" id="delete-section-{{ sectionForm.vars.value.id }}" href="{{ path('rj_site_admin.cv.section.delete', {'id': sectionForm.vars.value.id}) }}">x</a>
+                            </td>
+                         </tr>
+                        {% if sectionForm.vars.value.experiences is defined %}
+                        {% for experience in sectionForm.vars.value.experiences %}
+                        <tr class="section-block-{{ sectionForm.vars.value.id }}">
+                        	<td>-</td>
+                            <td colspan="3">
+                                <a class="" href="{{ path('rj_site_admin.cv.experience.edit', {'id':experience.id}) }}">{{ experience.title }}{% if experience.company %},{% endif %} {{ experience.company }}</a>
+                            </div>
+                        </tr>
+                        {% endfor %}
+                        <tr>
+                            <td colspan="4">
+                                <div><a class="btn btn-xs btn-primary" href="{{ path('rj_site_admin.cv.experience.add', {'section_id':sectionForm.vars.value.id}) }}">Ajouter une experience</a></div>
+                            </td>
+                        </tr>
+                        {{ form_end(sectionForm) }}
+                        {% endif %}
+                   
+                        
+                    </tbody>
+                </table>
+                
+                
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">Ajouter une section</h3>
+            </div>
+            <div class="panel-body">
                 <table class="table">
                     <thead>
                         <tr>
@@ -42,51 +97,43 @@
                         </tr>
                     </thead>
                     <tbody>
-                    {% for sectionForm in sectionForms %}
-                        {{ form_start(sectionForm, {'attr': {'class': 'form-horizontal section-forms', 'id' : 'section-form-' ~ sectionForm.vars.value.id, 'data-section-id': sectionForm.vars.value.id,
-                            'action': path('rj_site_admin.cv.section.edit', {'id': sectionForm.vars.value.id}), 'method': 'POST'}}) }}
-                        <tr class="section-block-{{ sectionForm.vars.value.id }}">
-                            <td>{{ sectionForm.vars.value.id }}</td>
-                            <td>{{ form_widget(sectionForm.title, {'id' : 'title-' ~ sectionForm.vars.value.id}) }}</td>
-                            <td>{{ form_widget(sectionForm.position, {'id' : 'position-' ~ sectionForm.vars.value.id}) }}</td>
-                            <td>
-                                {{ form_widget(sectionForm.save, {'attr': {'class': 'btn btn-xs btn-success'}, 'id' : 'save-section-' ~ sectionForm.vars.value.id}) }}
-                                <a class="btn btn-xs btn-danger sections-delete" data-section-id="{{ sectionForm.vars.value.id }}" id="delete-section-{{ sectionForm.vars.value.id }}" href="{{ path('rj_site_admin.cv.section.delete', {'id': sectionForm.vars.value.id}) }}">x</a>
-                            </td>
-                         </tr>
-                        {% if sectionForm.vars.value.experiences is defined %}
-                        <tr class="section-block-{{ sectionForm.vars.value.id }}">
-                            <td colspan="4">
-                                <div class="list-group">
-                                    {% for experience in sectionForm.vars.value.experiences %}
-                                        <a class="list-group-item" href="{{ path('rj_site_admin.cv.experience.edit', {'id':experience.id}) }}">{{ experience.title }}, {{ experience.company }}</a>
-                                    {% endfor %}
-                                </div>
-                                <div><a class="btn btn-xs btn-primary" href="{{ path('rj_site_admin.cv.experience.add', {'section_id':sectionForm.vars.value.id}) }}">Ajouter une experience</a></div>
-                            </div>
-                        </tr>
-                        {{ form_end(sectionForm) }}
-                        {% endif %}
-                    {% endfor %}
                         {{ form_start(newSectionForm, {'attr': {'class': 'form-horizontal', 'id' : 'new-section-form', 
                             'action': path('rj_site_admin.cv.section.add', {'profile_id': profile.id}), 'method': 'POST'}}) }}
                         <tr>
                             <td></td>
                             <td>{{ form_widget(newSectionForm.title, {'id' : 'new-title'}) }}</td>
                             <td>{{ form_widget(newSectionForm.position, {'id' : 'new-position'}) }}</td>
-                            <td>
-                                {{ form_widget(newSectionForm.save, {'attr': {'class': 'btn btn-xs btn-primary'}, 'id' : 'new-save'}) }}
-                            </td>
+                            <td>{{ form_widget(newSectionForm.save, {'attr': {'class': 'btn btn-xs btn-primary'}, 'id' : 'new-save'}) }}</td>
                         </tr>
-                        {{ form_end(newSectionForm) }}
+                        {{ form_end(newSectionForm) }} 
                     </tbody>
                 </table>
-                {% else %}
-                    <h3>Aucun CV n'existe</h3>
-                {% endif %}
+                
+                
             </div>
         </div>
     </div>
+   
     
+    <script>
+        $(".section-forms").submit(function( event ) {
+             event.preventDefault();
+             var $form = $( this );
+             
+             var posting = $.post($form.attr( "action" ), { "params": $form.serializeArray() } );
+              
+             posting.done(function( data ) {
+                 $( "#save-section-"+$form.attr('data-form-id') ).html(data);
+             });
+        });
+        $(".sections-delete").click(function( event ) {
+            event.preventDefault();
+            console.log($(this).attr('href'));
+            
+            var getting = $.get($(this).attr('href'), function(data) {
+             alert(data);
+            });
+       });
+    </script>
 
 {% endblock %}

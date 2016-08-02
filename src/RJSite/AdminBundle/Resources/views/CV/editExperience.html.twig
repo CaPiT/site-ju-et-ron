@@ -13,12 +13,17 @@
         <div class="pull-left">
             <h2>Modification d'un Curiculum Vitae</h2>
         </div>
+        <div class="pull-right">
+            {% if experience is defined %}
+        	<a class="btn btn-m btn-danger" href="{{ path('rj_site_admin.cv.experience.delete', {'id': experience.id}) }}">Delete</a>
+        	{% endif %}
+        </div>
         <div class="clearfix"></div>
     </div>
     <div class="">
-        <div class="panel panel-info">
+        <div class="panel panel-primary">
             <div class="panel-heading">
-                <h3 class="panel-title">Sections</h3>
+                <h3 class="panel-title">{% if experience is defined %}Modifier{% else %}Ajouter{% endif %} une expérience</h3>
             </div>
             <div class="panel-body">    
             {{ form(form) }}

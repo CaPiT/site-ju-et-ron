@@ -43,7 +43,7 @@
                     </thead>
                     <tbody>
                     {% for sectionForm in sectionForms %}
-                        {{ form_start(sectionForm, {'attr': {'class': 'form-horizontal section-forms', 'id' : 'section-form-' ~ sectionForm.vars.value.id, 'data-form-id': sectionForm.vars.value.id,
+                        {{ form_start(sectionForm, {'attr': {'class': 'form-horizontal section-forms', 'id' : 'section-form-' ~ sectionForm.vars.value.id, 'data-section-id': sectionForm.vars.value.id,
                             'action': path('rj_site_admin.cv.section.edit', {'id': sectionForm.vars.value.id}), 'method': 'POST'}}) }}
                         <tr class="section-block-{{ sectionForm.vars.value.id }}">
                             <td>{{ sectionForm.vars.value.id }}</td>
@@ -51,7 +51,7 @@
                             <td>{{ form_widget(sectionForm.position, {'id' : 'position-' ~ sectionForm.vars.value.id}) }}</td>
                             <td>
                                 {{ form_widget(sectionForm.save, {'attr': {'class': 'btn btn-xs btn-success'}, 'id' : 'save-section-' ~ sectionForm.vars.value.id}) }}
-                                <a class="btn btn-xs btn-danger sections-delete" id="delete-section-{{ sectionForm.vars.value.id }}" href="{{ path('rj_site_admin.cv.section.delete', {'id': sectionForm.vars.value.id}) }}">x</a>
+                                <a class="btn btn-xs btn-danger sections-delete" data-section-id="{{ sectionForm.vars.value.id }}" id="delete-section-{{ sectionForm.vars.value.id }}" href="{{ path('rj_site_admin.cv.section.delete', {'id': sectionForm.vars.value.id}) }}">x</a>
                             </td>
                          </tr>
                         {% if sectionForm.vars.value.experiences is defined %}
@@ -81,32 +81,6 @@
                         {{ form_end(newSectionForm) }}
                     </tbody>
                 </table>
-                <script>
-                    $(".section-forms").submit(function( event ) {
-                         event.preventDefault();
-                         var $form = $( this );
-                         
-                         var posting = $.post($form.attr( "action" ), { "params": $form.serializeArray() } );
-                          
-                         posting.done(function( data ) {
-                             $( "#save-section-"+$form.attr('data-form-id') ).html(data);
-                         });
-                    });
-                    $(".sections-delete").click(function( event ) {
-                        event.preventDefault();
-                        console.log($(this).attr('href'));
-                        
-                        var getting = $.get($(this).attr('href'), function(data) {
-                         alert(data);
-                        });
-                        
-//                         var posting = $.post( url, { "params": $form.serializeArray() } );
-                         
-//                         posting.done(function( data ) {
-//                         	$( this ).html(data);
-//                         });
-                   });
-                </script>
                 {% else %}
                     <h3>Aucun CV n'existe</h3>
                 {% endif %}

@@ -1,0 +1,47 @@
+// ===================================================================
+// + Selected Message
+// ===================================================================
+
+
+.select-language{
+	position: fixed;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	a{
+		display: block;
+		width: 40px;
+		height: 40px;
+		border: 1px solid $primarycolor;
+		background-color: transparent;
+		-webkit-border-top-left-radius: 10px;
+		-moz-border-radius-topleft: 10px;
+		border-top-left-radius: 10px;
+		color: $primarycolor;
+		text-align: center;
+		line-height: 40px;
+		&+a{
+			-webkit-border-top-left-radius: 0;
+			-moz-border-radius-topleft: 0;
+			border-top-left-radius: 0;
+			-webkit-border-bottom-left-radius: 10px;
+			-moz-border-radius-bottomleft: 10px;
+			border-bottom-left-radius: 10px;
+			border-top: 0;
+		}
+		&.active{
+			background-color: $primarycolor;
+			color: $black;
+			&:hover{
+				background-color: transparent;
+				color: $primarycolor;
+				transition: all, 0.25s;
+			}
+		}
+		&:hover{
+			background-color: $primarycolor;
+			color: $black;
+			transition: all, 0.25s;
+		}
+	}
+}

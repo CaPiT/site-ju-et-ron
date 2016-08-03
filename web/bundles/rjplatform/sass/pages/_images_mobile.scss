@@ -1,0 +1,29 @@
+// ===================================================================
+// + DESCRIPTION
+//====================================================================
+
+.images{
+	width: 100%;
+    padding: 55px 0 0;
+    .images-tablet{
+    	width: inherit;
+    }
+    .content-text{
+		text-align: center;
+	    width: 300px;
+	    margin: auto;
+    }
+    .glide--horizontal .glide__arrows{
+    	bottom: 0;
+    	.glide__arrow{
+    		transform: inherit;
+    		bottom: 50px;
+			#arrow1,
+			#arrow2{
+				width: 16px;
+				height: 21px;
+				fill: $primarycolor;
+			}
+    	}
+    }
+}

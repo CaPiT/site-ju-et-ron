@@ -1,0 +1,60 @@
+// ===================================================================
+// + RESET
+// ===================================================================
+
+html,
+body{
+	margin: 0;
+	padding: 0;
+	body{
+		letter-spacing: 4px;
+	}
+	body,
+	a,
+	p,
+	button,
+	input,
+	textarea{
+		font-family: 'dosis';
+		text-decoration: none;
+		&:focus{
+			outline: none;
+		}
+	}
+	ul{
+		padding: 0;
+	}
+	.small-font{
+		font-size: 14px;
+		line-height: 18px;
+	}
+	.medium-font{
+		font-size: 16px;
+		line-height: 20px;
+	}
+	.tall-font{
+		font-size: 18px;
+		line-height: 22px;
+	}
+	.bold-font{
+		font-size: 50px;
+	}
+	.green{
+		color: $primarycolor;
+	}
+	.white{
+		color: $white;
+	}
+	.regular{
+		font-weight: 400;
+	}
+	.semi-bold{
+		font-weight: 600;
+	}
+	.bold{
+		font-weight: 700;
+	}
+	li{
+		list-style: none;
+	}
+}

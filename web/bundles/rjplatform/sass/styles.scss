@@ -1,0 +1,47 @@
+// ===================================================================
+// Project: Ju & Ron
+// File   : styles.scss
+// Purpose: Master stylesheet
+// ===================================================================
+// @package Ju & Ron
+// @file styles.scss
+// @copyright Joffrey Berrier
+
+// + Var
+
+@import "var/color";
+@import "var/btn";
+
+// + Reset
+
+@import "config/reset";
+@import "config/languages";
+
+// + Page
+
+@import "pages/header";
+@import "pages/home";
+@import "pages/description";
+@import "pages/shipping";
+@import "pages/images";
+@import "pages/cart";
+
+.mobile{
+	display: none;
+}
+
+@media (max-width: 1280px){
+// + Responsive
+	.desktop{
+		display: none;
+	}
+	.mobile{
+		display: block;
+	}
+// + Header Mobile
+	@import "pages/header_mobile";
+	@import "pages/description_mobile";
+	@import "pages/shipping_mobile";
+	@import "pages/images_mobile";
+	@import "pages/cart_mobile";
+}

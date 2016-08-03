@@ -1,0 +1,259 @@
+// ===================================================================
+// + DESCRIPTION
+//====================================================================
+
+.description{
+	width: 90%;
+    padding: 45px 5% 20%;
+	.left-part,
+	.center-part,
+	.right-part{
+		display: inline-block;
+		vertical-align: top;
+		.title-desc{
+			font-size: 24px;
+			padding: 5px 0;
+			width: 100%;
+			position: relative;
+			&::before,
+			&::after{
+				content: "";
+				display: block;
+				width: 20%;
+				height: 1px;
+				background-color: $primarycolor;
+				position: absolute;
+				left: 0;
+				right: 0;
+			}
+			&::before{
+				top: 0;
+			}
+			&::after{
+				bottom: 0;
+			}
+		}
+		.link{
+			display: block;
+		}
+		.sep{
+			position: relative;
+			display: block;
+			padding: 0 0 30px 0;
+			&::after{
+				content: "";
+				display: block;
+				max-width: 150px;
+				width: 100%;
+				height: 1px;
+				background-color: $white;
+				position: absolute;
+				bottom: 0;
+			}
+		}
+		.septop{
+			margin: 70px 0 0 0;
+		}
+		.left-part-title,
+		.right-part-title{
+			margin: 0 0 100px 0;
+		}
+		.center-part-title{
+			margin: 0 0 50px 0;
+		}
+	}
+	ul{
+		text-align: center;
+	    width: 100%;
+	    margin: 0 auto;
+	    padding: 0;
+		.left-part{
+			max-width: (100% / 2.7);
+			width: 100%;
+			text-align: left;
+		}
+		.center-part{
+			max-width: (100% / 2.7);
+			text-align: center;
+			.border-link{
+				position: relative;
+				transition: all, 0.25s;
+				&.appear{
+					position: fixed;
+					top: 0;
+					right: 0;
+					left: 0;
+					width: 120px;
+    				margin: auto;
+					.wrapper-border-link{
+						position: absolute;
+						top: 50%;
+						transform: translateY(-50%);
+					}
+				}
+				.wrapper-border-link{
+					position: absolute;
+					top: 70px;
+					left: 0;
+					right: 0;
+					z-index: 20;
+					transition: all, 1s;
+				}
+				&::after{
+					content: "";
+					position: absolute;
+					top: 0;
+					left: 50%;
+					transform: translateX(50%);
+					right: 0;
+					bottom: 0;
+					width: 1px;
+					background-color: $primarycolor;
+				}
+				.ju-link,
+				.ron-link{
+					display: block;
+					color: $primarycolor;
+				    height: 22px;
+				    width: 105px;
+				    line-height: 22px;
+				    position: relative;
+				    top: 0;
+				    right: 0;
+				    margin: 40px auto;
+				    z-index: 10;
+				    border-radius: 50px;
+				    padding-left: 15px;
+				    transition: all, 0.25s;
+				    &.active{
+						border: 1px solid $primarycolor;
+						background-color: $primarycolor;
+						color: $black;
+						transition: 0.35s;
+				    }
+				}
+				.ju-link{
+				    text-align: left;
+				    top: 0;
+				    left: -38px;
+				    &::after{
+				    	content:"";
+				    	position: absolute;
+				    	background-color: $primarycolor;
+				    	width: 22px;
+				    	height: 22px;
+				    	border-radius: 50px;
+				    	right: 10px;
+				    }
+				}
+				.ron-link{
+					text-align: right;
+				    padding-right: 10px;
+				    top: 0;
+				    left: 40px;
+				    width: 95px;
+				    &::after{
+				    	content:"";
+				    	position: absolute;
+				    	background-color: $primarycolor;
+				    	width: 22px;
+				    	height: 22px;
+				    	left: 10px;
+				    	border-radius: 50px;
+				    }
+				}
+				.ju-link.active{
+				    &::after{
+				    	content:"";
+				    	position: absolute;
+				    	background-color: $black;
+				    	width: 22px;
+				    	height: 22px;
+				    	border-radius: 50px;
+				    	right: 10px;
+				    }
+				}
+				.ron-link.active{
+					display: block;
+					border: 1px solid $primarycolor;
+					background-color: $primarycolor;
+					color: $black;
+				    &::after{
+				    	content:"";
+				    	position: absolute;
+				    	background-color: $black;
+				    	width: 22px;
+				    	height: 22px;
+				    	left: 10px;
+				    	border-radius: 50px;
+				    }
+				}
+			}
+		}
+		.right-part{
+			max-width: (100% / 2.7);
+			width: 100%;
+			text-align: right;
+			.title-desc{
+				&::before,
+				&::after{
+					right: 0;
+					left: auto;
+				}
+			}
+			.sep::after{
+				right: 0;
+			}
+		}
+	}
+	.para-soft{
+		margin: 40px 0 0;
+	}
+	.soft{
+		width: 50%;
+		height: 15px;
+		border-radius: 50px;
+		margin: 5px 0 30px;
+	}
+	.photoshop{
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d0e907+75,ffffff+100 */
+		background: #d0e907; /* Old browsers */
+		background: -moz-linear-gradient(left,  #d0e907 75%, #ffffff 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(left,  #d0e907 75%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to right,  #d0e907 75%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d0e907', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+
+	}
+	.indesign{
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d0e907+75,ffffff+100 */
+		background: #d0e907; /* Old browsers */
+		background: -moz-linear-gradient(left,  #d0e907 75%, #ffffff 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(left,  #d0e907 75%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to right,  #d0e907 75%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d0e907', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+	}
+	.illustrator{
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d0e907+37,ffffff+100 */
+		background: rgb(208,233,7); /* Old browsers */
+		background: -moz-linear-gradient(left,  rgba(208,233,7,1) 37%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(left,  rgba(208,233,7,1) 37%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to right,  rgba(208,233,7,1) 37%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d0e907', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+	}
+	.html{
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d0e907+1,ffffff+74&1+0,0.9+42 */
+		background: -moz-linear-gradient(left,  rgba(208,233,7,1) 0%, rgba(208,233,7,1) 1%, rgba(234,245,146,0.9) 42%, rgba(255,255,255,0.9) 74%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(left,  rgba(208,233,7,1) 0%,rgba(208,233,7,1) 1%,rgba(234,245,146,0.9) 42%,rgba(255,255,255,0.9) 74%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to right,  rgba(208,233,7,1) 0%,rgba(208,233,7,1) 1%,rgba(234,245,146,0.9) 42%,rgba(255,255,255,0.9) 74%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d0e907', endColorstr='#e6ffffff',GradientType=1 ); /* IE6-9 */
+	}
+	.office{
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d0e907+37,ffffff+100 */
+		background: rgb(208,233,7); /* Old browsers */
+		background: -moz-linear-gradient(left,  rgba(208,233,7,1) 37%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(left,  rgba(208,233,7,1) 37%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to right,  rgba(208,233,7,1) 37%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d0e907', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+	}
+
+}

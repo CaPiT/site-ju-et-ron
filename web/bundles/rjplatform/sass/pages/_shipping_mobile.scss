@@ -1,0 +1,52 @@
+// ===================================================================
+// + DESCRIPTION
+//====================================================================
+
+.shipping{
+	top: 0;
+	transform: inherit;
+	padding: 45px 0;
+	.left-part,
+	.right-part{
+		display: block;
+		max-width: 95%;
+		margin: auto;
+		width: 100%;
+		vertical-align: top;
+	}
+	.right-part{
+		float: none;
+		text-align: left;
+	}
+	&::after,
+	&::before{
+		content:"";
+		display: none;
+	}
+	.title-shipping{
+		margin: 50px auto 0;
+		text-align: center;
+	}
+	.icon-plane{
+		display: block;
+		margin: 50px auto 0;
+		position: relative;
+		text-align: center;
+		&::after{
+			content: "";
+		    display: block;
+		    background: url("../images/bg-repeat-2.png");
+		    width: 120%;
+		    background-repeat: repeat-x;
+		    height: 1px;
+		    margin: auto;
+		    position: absolute;
+		    top: 25px;
+		    left: -60px;
+		    right: 0;
+		}
+	}
+	.icon-plane-2{
+		transform: rotate(180deg);
+	}
+}

@@ -1,0 +1,86 @@
+// ===================================================================
+// + HEADER
+// ===================================================================
+
+.header{
+	height: 40px;
+	padding: 0 40px;
+	background-color: rgba(0,0,0,0.80);
+	h1{
+		float: left;
+		margin: 0;
+		font-size: 20px;
+		line-height: 40px;
+		span{
+			color: $white;
+		}
+	}
+	ul{
+		float: right;
+		margin: 0;
+		li{
+			list-style: none;
+			display: inline-block;
+			vertical-align: top;
+			padding: 0 10px;
+			margin: 0;
+			&:hover,
+			&.active{
+				background-color: $primarycolor;
+				transition: all, 0.25s;
+				.icon-desc::before{
+					background: url('../images/icon-desc-hover.svg') 0 0 no-repeat;
+					width: 21px;
+					height: 23px;
+				}
+				.icon-image::before{
+					background: url('../images/icon-image-hover.svg') 0 0 no-repeat;
+					width: 24px;
+					height: 24px;
+				}
+				.icon-plane::before{
+					background: url('../images/icon-plane-hover.svg') 0 0 no-repeat;
+					width: 26px;
+					height: 24px;
+				}
+				.icon-cart::before{
+					background: url('../images/icon-cart-hover.svg') 0 0 no-repeat;
+					width: 24px;
+					height: 24px;
+				}
+			}
+			a{
+				color: $white;
+				font-size: 12px;
+				line-height: 40px;
+				display: block;
+			}
+			.icon-desc::before,
+			.icon-image::before,
+			.icon-plane::before,
+			.icon-cart::before{
+				content: "";
+				display: inline-block;
+				vertical-align: middle;
+				width: 24px;
+				height: 24px;
+				margin: 0 20px 0 0;
+			}
+			.icon-desc::before{
+				background: url('../images/icon-desc.svg') 0 0 no-repeat;
+				width: 21px;
+				height: 23px;
+			}
+			.icon-image::before{
+				background: url('../images/icon-image.svg') 0 0 no-repeat;
+			}
+			.icon-plane::before{
+				background: url('../images/icon-plane.svg') 0 0 no-repeat;
+				width: 26px;
+			}
+			.icon-cart::before{
+				background: url('../images/icon-cart.svg') 0 0 no-repeat;
+			}
+		}	
+	}
+}

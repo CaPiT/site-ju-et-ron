@@ -1,0 +1,51 @@
+// ===================================================================
+// + DESCRIPTION MOBILE
+//====================================================================
+
+.title-description{
+	margin: 70px 0 30px;
+	text-align: center;
+	position: relative;
+	&::after{
+		content: "";
+		position: absolute;
+		display: block;
+		width: 100%;
+		bottom: -20px;
+		height: 1px;
+		right: 0;
+		left: 0;
+		margin: auto;
+		background-color: rgba(255, 255, 255, 0.2);
+	}
+}
+.description{
+	padding: 20px;
+	ul .left-part,
+	ul .center-part,
+	ul .right-part{
+		display: block;
+		max-width: 100%;
+		text-align: left;
+		.title-desc::before,
+		.title-desc::after{
+			right: auto;
+			left: 0;
+		}
+		.sep::after{
+			left: 0;
+			right: auto;
+		}
+		.ju-link::after{
+	    	content:"";
+	    	left: 10px;
+		}
+		.ron-link::after{
+	    	content:"";
+	    	left: 10px;
+		}
+	}
+	ul .center-part{
+		display: none;
+	}
+}

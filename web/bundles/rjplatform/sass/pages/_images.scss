@@ -1,0 +1,43 @@
+// ===================================================================
+// + DESCRIPTION
+//====================================================================
+
+.images{
+	width: 90%;
+    padding: 40px 5% 0;
+    margin: auto;
+    text-align: center;
+    .glide__wrapper{
+    	margin: 20px auto;
+    }
+	.glide--horizontal .glide__arrow.next,
+	.glide--horizontal .glide__arrow.prev{
+		border: 0;
+		#arrow1,
+		#arrow2{
+			fill: none;
+			stroke: $primarycolor;
+			stroke-miterlimit: 10;
+			stroke-width: 20px;
+			display: block;
+			width: 35px;
+			height: 45px;
+			transition: all, 0.25s;
+			&:hover{
+				fill: $primarycolor;
+			}
+		}
+	}
+	.content-desc{
+		width: 100%;
+	}
+    .content-text{
+    	text-align: left;
+    }
+    .images-desktop,
+    .images-tablet{
+        display: block;
+        width: 70%;
+        margin: 0 auto;
+    }
+}

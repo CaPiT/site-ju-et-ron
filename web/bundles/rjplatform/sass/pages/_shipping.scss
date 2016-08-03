@@ -1,0 +1,54 @@
+// ===================================================================
+// + DESCRIPTION
+//====================================================================
+
+.shipping{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+    width: 90%;
+    padding: 0 5%;
+	margin: auto;
+	transform: translateY(-50%);
+	&::after{
+		content: "";
+		display: block;
+		background: url('../images/icon-plane.svg') 0 0 no-repeat;
+		background-size: 55px 60px;
+		width: 55px;
+		height: 60px;
+		margin: auto;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		right: 0;
+		transform: rotate(270deg);
+	}
+	&::before{
+	    content: "";
+	    display: block;
+	    background: url("../images/bg-repeat.png");
+	    width: 1px;
+	    background-repeat: repeat-y;
+	    height: 100%;
+	    margin: auto;
+	    position: absolute;
+	    top: 50%;
+	    transform: translateY(-40%);
+	    left: 0;
+	    right: 0;
+	}
+	.left-part,
+	.right-part{
+		display: inline-block;
+		max-width: 40%;
+		margin: auto;
+		width: 100%;
+		vertical-align: top;
+	}
+	.right-part{
+		float: right;
+		text-align: right
+	}
+}

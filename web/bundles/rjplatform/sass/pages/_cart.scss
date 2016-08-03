@@ -1,0 +1,43 @@
+// ===================================================================
+// + DESCRIPTION
+//====================================================================
+
+.cart{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 90%;
+    padding: 45px 5% 0;
+    margin: auto;
+    right: 0;
+    left: 0;
+    text-align: center;
+    .icon-images{
+    	margin: 50px 0;
+    }
+   .form-cart{
+	   	max-width: 500px;
+	    width: 100%;
+	    margin: auto;
+	    input,
+	    textarea{
+		    width: 100%;
+		    max-width: 500px;
+		    line-height: 30px;
+		    height: 30px;
+		    margin: 0 0 20px 0;
+		    background: transparent;
+		    padding: 0 10px;
+		    color: $white;
+		    font-size: 14px;
+		    border-radius: 10px;
+		    border: 2px solid $white;
+		}
+		textarea{
+			height: 200px;
+		}
+		button{
+			cursor: pointer;
+		}
+    }
+}

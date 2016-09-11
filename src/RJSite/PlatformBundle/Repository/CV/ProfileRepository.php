@@ -14,10 +14,10 @@ use Doctrine\ORM\Tools\Pagination\Paginator;
  */
 class ProfileRepository extends EntityRepository
 {
-    public function getProfiles($page, $nbPerPage)
+    public function getProfiles($page, $nbPerPage, $order='ASC')
     {
         $query = $this->createQueryBuilder('p')
-            ->orderBy('p.id', 'DESC')
+            ->orderBy('p.id', $order)
             ->getQuery()
         ;
     

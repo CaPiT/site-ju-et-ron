@@ -7,6 +7,7 @@
 {% endblock %}
 
 {% block rjsite_default_body %}
+
 <div class="bg-color"></div>
 <div class="wrapper">
     <div class="mobile title-description">
@@ -14,172 +15,59 @@
         <h2 class="title-desc semi-bold green">DESCRIPTION</h2>
     </div>
     <div class="description">
+        {% if listProfiles is defined %}
         <ul>
-            <li class="left-part">
-                <div class="left-part-title">
-                    <h2 class="bold bold-font white">ELLE</h2>
-                    <p class="regular white tall-font"><span class="green semi-bold">Ju</span>stine Coudert<br/>
-                    28 ans<br/>
-                    Directrice Artistique E-commerce</p>
-                    <a href="#" class="green semi-bold">contacter Justine >></a>
+        {% set i = 0  %}
+        {% for profile in listProfiles if i < 2 %}
+            {% if i==0 %}
+                {% set class = 'left'  %}
+            {% else %}
+                {% set class = 'right'  %}
+            {% endif %}
+            <li class="{{ class }}-part">
+                <div class="{{ class }}-part-title">
+                    <h2 class="bold bold-font white">{{ profile.title|upper }}</h2>
+                    <p class="regular white tall-font">{{ profile.name }}<br/>
+{#                     <p class="regular white tall-font"><span class="green semi-bold">Ju</span>stine Coudert<br/>#}
+                    {{ profile.age }} ans<br/>
+                    {{ profile.function }}</p>
+                    <a href="#" class="green semi-bold">contacter {{ profile.firstname }} >></a>
                 </div>
-                <div class="left-part-content">
-
-                    <!-- 1er paragraphe-->
-                    <h2 class="title-desc semi-bold white" id="travailJustine">TRAVAIL</h2>
-                    <p class="regular white medium-font">
-                        <span class="green">DIRECTRICE ARTISTIQUE E-COMMERCE<br/></span>
-                        THE OTHER STORE | PARIS, FRANCE<br/>
-                        FÉV. 2015 - SEPT. 2016</p>
-
-                    <p class="small-font regular white">
-                        Gestion & management d’une équipe de 8 webdesigners<br/>
-                        Conception et refonte de sites e-commerce en responsive design<br/>
-                        Prise de briefs, analyse des besoins clients<br/>
-                        Participation aux projets transverses de The Other Store<br/>
-                        Chiffrage, planification et conception des projets<br/>
-                        Participation au Comité de Projet<br/>
-                        Participation au Comité deCoordination Marketing</p>
-
-                        <p class="small-font regular white">
-                        Clients :<br/>
-                        <a href="#" class="white link">www.nafnaf.com</a>
-                        <a href="#" class="white link">www.aigle.com</a>
-                        <a href="#" class="white link">www.gerarddarel.com</a>
-                        <a href="#" class="white link">www.letanneur.com</a>
-                        <a href="#" class="white link">www.lafeemaraboutee.com</a>
-                        <a href="#" class="white link">www.lancel.com</a>
-                        <a href="#" class="white link">www.freemantporter.com</a>
-                        <a href="#" class="white link">www.fatherandsons.fr</p>
-                    </p>
-                    <a href="#" class="small-font green sep">En savoir plus</a>
-
-                    <!-- 2e paragraphe-->
-                    
-                    <p class="regular white medium-font">
-                    <span class="green">WEBDESIGNER</span><br/>
-                    The Other Store | Paris, France<br/>
-                    Mar. 2012 - Fév. 2015</p>
-
-                    <p class="small-font regular white">
-                    Lead d'une équipe de 6 webdesigners<br/>
-                    Gestion de l’animation commerciale de 15 marques mode<br/>
-                    Création de landing pages, bannières, animation réseaux sociaux<br/>
-                    Création et intégration de newsletters<br/>
-                    Améliorations graphiques et ergonomiques des sites de l’agence<br/>
-                    Refonte de sites e-commerce</p>
-
-                    <p class="small-font regular white">
-                    Clients :<br/>
-                    <a href="#" class="white link">www.nafnaf.com</a>
-                    <a href="#" class="white link">www.aigle.com</a>
-                    <a href="#" class="white link">www.gerarddarel.com</a>
-                    </p>
-
-                    <a href="#" class="small-font green sep">En savoir plus</a>
-
-                    <!-- 3e paragraphe-->
-
-                    <p class="regular white medium-font">
-                    <span class="green">ASSISTANTE DIRECTION ARTISTIQUE WEB (STAGE)</span><br/>
-                    Mazarine You To You | Paris, France<br/>
-                    Juin 2011 - Sept. 2011</p>
-
-                    <p class="small-font regular white">
-                    Création de sites web<br/>
-                    Création de pages et applications Facebook<br/>
-                    Création d’habillages Youtube et Twitter<br/>
-                    Participation aux appels d’offre de l’agence</p>
-
-                    <p class="small-font regular white sep">
-                    Clients : Orange, Criteo, Havana Club, SFR, etc.</p>
-
-                    <!-- 4e paragraphe-->
-
-                    <p class="regular white medium-font">
-                    <span class="green">CONSEILLÈRE DE VENTE</span><br/>
-                    Comptoir des Cotonniers | Nancy, France<br/>
-                    Sept. 2009 - Juillet. 2010</p>
-
-                    <p class="small-font regular white">
-                    Accueil, conseil et vente au sein d’une boutique de prêt-à-porter,<br/>
-                    puis d’un corner de grand magasin pour la même marque.</p>
-
-                    <!-- 5e paragraphe-->
-
-                    <h2 class="title-desc semi-bold white septop" id="etudesJustine">ÉTUDES</h2>
-
-                    <p class="regular white medium-font">
-                    <span class="green">ISCOM PARIS</span><br/>
-                    Paris, France<br/>
-                    Sept. 2010 - Sept. 2012</p>
-
-                    <p class="small-font regular white sep">Institut Supérieur de Communication<br/>
-                    Maîtrise Publicité, Média et Agences<br/>
-                    Participation à des compétitions professionnelles</p>
-
-                    <!-- 6e paragraphe-->
-
-                    <p class="regular white medium-font">
-                    <span class="green">UNIVERSITÉ NANCY 2</span><br/>
-                    Nancy, France<br/>
-                    Sept. 2008 - Juin. 2009</p>
-
-                    <p class="small-font regular white sep">Baccalauréat en Connaissances des Métiers et l’Information<br/>
-                    Création et mise en page du journal de l’université.</p>
-
-                    <!-- 7e paragraphe-->
-
-                    <p class="regular white medium-font">
-                    <span class="green">LYCÉE PIERRE BAYEN</span><br/>
-                    Châlons en Champagne, France<br/>
-                    Juillet 2005</p>
-
-                    <p class="small-font regular white">Baccalauréat Economique et Social<br/>
-                    Mention Bien</p>
-
-                    <!-- 8e paragraphe-->
-
-                    <h2 class="title-desc semi-bold white septop" id="diversJustine">DIVERS</h2>
-
-                    <p class="regular medium-font green">LANGUES</p>
-
-                    <p class="medium-font regular white">Français<br/>
-                    <span class="small-font">Langue maternelle</span></p>
-
-                    <p class="medium-font regular white">Anglais<br/>
-                    <span class="small-font">Compétence professionnelle<br/>
-                    TOEIC : 945 points</span></p>
-
-                    <p class="medium-font regular white">Espagnol<br/>
-                    <span class="small-font">Notions</span></p>
-
-                    <p class="medium-font regular white sep">Italien<br/>
-                    <span class="small-font">Notions</span></p>
-
-                    <!-- 9e paragraphe-->
-
-                    <p class="regular medium-font green septop">LOGICIELS & TECHNOLOGIES</p>
-
-                    <p class="para-soft medium-font regular white">Adobe Photoshop</p>
-                    <div class="soft photoshop"></div>
-                    <p class="para-soft medium-font regular white">Adobe Indesign</p>
-                    <div class="soft indesign"></div>
-                    <p class="para-soft medium-font regular white">Adobe Illustrator</p>
-                    <div class="soft illustrator"></div>
-                    <p class="para-soft medium-font regular white">HTML / CSS</p>
-                    <div class="soft html"></div>
-                    <p class="para-soft medium-font regular white">Pack Office</p>
-                    <div class="soft office"></div>
-
-                    <!-- 10e paragraphe-->
+                <div>
+                    {% for section in profile.sections %}
+                        <h2 class="title-desc semi-bold white" id="{{ section.title|lower|replace({' ': ''}) }}{{ profile.firstname }}">{{ section.title|upper }}</h2>
+                        {% for experience in section.experiences %}
+                            <p class="regular white medium-font">
+                                <span class="green">{{ experience.title|upper }}<br/></span>
+                                {% if experience.company %}
+                                    {{ experience.company|upper }} |
+                                {% endif %}
+                                {% if experience.location %}
+                                    {{ experience.location|upper }}<br/>
+                                {% endif %}
+                                {% if experience.startAt %}
+                                    {{ experience.startAt|date("M. Y")|upper }}
+                                {% endif %}
+                                {% if experience.startAt and experience.endDate %} - {% endif %}
+                                {% if experience.endDate %}
+                                    {{ experience.endDate|date("M. Y")|upper }}</p>
+                                {% endif %}
+                            </p>
+                            <div class="small-font regular white">
+                                {{ experience.content|raw }}
+                            </div>
+                            {% if not loop.last %}
+                            <div class="sep"></div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
 
                     <div class="septop">
-                         <a class="btn" href="#">contacter Justine</a>
+                         <a class="btn" href="#">Contacter {{ profile.firstname }}</a>
                     </div>
                 </div>
             </li>
-
+            {%  if i==0 %}
             <li class="center-part">
                 <div class="center-part-title">
                     <img src="{{ asset('bundles/rjplatform/images/icon-desc.svg') }}" width="42" height="50"/>
@@ -195,214 +83,13 @@
                 {{ render(controller("RJSiteFrontBundle:CV:menu")) }}
                 
             </li>
-
-            <li class="right-part">
-                <div class="right-part-title">
-                    <h2 class="bold bold-font white">LUI</h2>
-                    <p class="regular white"><span class="green semi-bold">Ron</span>an Capitaine<br/>
-                    29 ans<br/>
-                    Lead Développeur</p>
-                    <a href="#" class="green semi-bold">contacter Ronan >></a>
-                </div>
-                <div class="right-part-content">
-
-                    <!-- 1er paragraphe-->
-                    <h2 class="title-desc semi-bold white" id="travailRon">TRAVAIL</h2>
-                    <p class="regular white medium-font">
-                        <span class="green">RESPONSABLE DU PÔLE IT<br/></span>
-                        The Other Store | Paris, France<br/>
-                        Juil. 2015 - Sept. 2016</p>
-
-                    <p class="small-font regular white">
-                        Management d’une équipe de 12 personnes<br/>
-                        Gestion d'équipe<br/>
-                        Formation et recrutement<br/>
-                        Plan de charge, planning<br/>
-                        Stand-up meeting, comité de projet</p>
-
-                        <p class="small-font regular white">
-                        Gestion de projets<br/>
-                        Pilotage de projets : Nouveaux sites (20 sites)<br/>
-                        et nouvelles fonctionnalités<br/>
-                        Spécifications techniques<br/>
-                        Pilotage, conception suivi du projet Marketplace :<br/>
-                        interfaçage marketplace flux catalogue, création de commandes</p>
-
-                        <p class="small-font regular white">
-                        Environnement technique :<br/>
-                        <i>PHP5, MySQL, Magento, Framework Zend, CodeIgniter,<br/>
-                        Wordpress, Varnish, HTML, CSS, Javascript, Prototype,<br/>
-                        SVN, SolR, Eclipse, Ubuntu</i></p>
-
-                    <a href="#" class="small-font green sep">En savoir plus</a>
-
-                    <!-- 2e paragraphe-->
-                    
-                    <p class="regular white medium-font">
-                    <span class="green">LEAD DÉVELOPPEUR - 7 PERSONNES</span><br/>
-                    The Other Store | Paris, France<br/>
-                    Janv. 2014 - Juil. 2015</p>
-
-                    <p class="small-font regular white">
-                    Gestion de projets<br/>
-                    Pilotage de projets : nouveaux sites et nouvelles fonctionnalités<br/>
-                    Spécifications techniques</p>
-
-                    <p class="small-font regular white">
-                    Formation et recrutement<br/>
-
-                    Réalisations sur la plateforme Magento (15 sites) :<br/>
-                    Développement, amélioration et mise en place de sites<br/>
-                    Conception et réalisation de modules<br/>
-                    Mise en place du moteur d'indexation SolR<br/>
-                    et optimisation de la gestion catalogue<br/>
-                    </p>
-
-                    <p class="small-font regular white">
-                    Environnement technique :<br/>
-                    <i>PHP5, MySQL, Magento, Framework Zend, CodeIgniter,<br/>
-                    Wordpress, Varnish, SVN, SolR, Eclipse, Ubuntu</i></p>
-
-                    <a href="#" class="small-font green sep">En savoir plus</a>
-
-                    <!-- 3e paragraphe-->
-
-                    <p class="regular white medium-font">
-                    <span class="green">DÉVELOPPEUR SENIOR PHP (MAGENTO)</span><br/>        
-                    The Other Store | Paris, France<br/>
-                    Janv. 2012 - Janv. 2014</p>
-
-
-                    <p class="small-font regular white">Réalisations sur Magento<br/>
-                    Conception et développement de modules<br/>
-                    (cross-sell, panier, commandes, livraison,<br/>
-                    paiement, gestion de promotions, blog)<br/>
-                    Optimisation de la base de données et de diverses fonctionnalités<br/>
-                    Mise en place de systèmes d'import plus rapide<br/>
-                    (catalogue, commandes)</p>
-
-                    <p class="small-font regular white">Migration vers une nouvelle plateforme sur Magento :<br/>
-                    Migration des versions 1.4, 1.5, 1.6 vers la 1.7<br/>
-                    Migration de modules<br/>
-                    Refonte du thème default<br/>
-                    Branchement avec l'intranet</p>
-
-                    <p class="small-font regular white">Réalisations sur l'intranet :<br/>
-                    Interfaçage entre les ERP clients, l'intranet et les sites Magento<br/>
-                    (synchronisation catalogue, clients, commandes, factures)<br/>
-                    Réalisation de rapports, système d'import/export, module de configuration</p>
-
-                    <p class="small-font regular white">Participation à la mise en place de nouveaux sites<br/>
-
-                    Environnement technique :<br/>
-                    <i>PHP5, MySQL, Magento, Framework Zend, CodeIgniter, Wordpress,<br/>
-                    Varnish, HTML, Javascript, JQuery, SVN, Jira, Eclipse, Ubuntu</i></p>
-
-                    <a href="#" class="small-font green sep">En savoir plus</a>
-
-                    <!-- 4e paragraphe-->
-
-                    <p class="regular white medium-font">
-                    <span class="green">DÉVELOPPEUR MAGENTO</span><br/>
-                    ASPerience SARL | Nantes, France<br/>
-                    Juil. 2009 - Janv. 2012</p>
-
-                    <p class="small-font regular white">
-                    Réalisations sur Magento (PHP) :<br/>
-                    Modules de gestion de clients et commandes<br/>
-                    Auto-complétion d'adresses<br/>
-                    Création de templates<br/>
-                    Création d'un nouveau checkout<br/>
-                    Evolution et optimisation de modules</p>
-
-                    <p class="small-font regular white">Développements, maintenance et évolutions des sites Magento suivants<br/>
-                    La Boutique du Froid, Informatic Pro, ArtFab</p>
-
-                    <p class="small-font regular white">
-                    Environnement technique :<br/>
-                    PHP5, MySQL, Magento, Framework Zend, HTML, CSS,<br/>
-                    Javascript, Prototype, Track, SVN, Eclipse, Ubuntu</p>
-
-                    <a href="#" class="small-font green sep">En savoir plus</a>
-
-                    <!-- 5e paragraphe-->
-
-                    <p class="regular white medium-font"><span class="green">DÉVELOPPEUR OPENERP - PYTHON</span><br/>
-                    ASPerience SARL | Nantes, France</br>
-                    Juil. 2009 - Janv. 2012</p>
-
-                    <p class="small-font regular white">Réalisation de nouvelles fonctionnalités<br/>
-                    sur OpenERP (Odoo),un ERP en python :<br/>
-                    Evolution de l'OMS, du système de facturation<br/>
-                    Evolution des gestionnaires de produits et clients<br/>
-                    Evolution de l'outil de gestion de projet<br/>
-                    Mise en place d'API et Talend permettant<br/>
-                    la communication entre Track, GLPI et OpenERP</p>
-
-                    <p class="small-font regular white">Développement d'une synchronisations<br/>
-                    de données entre OpenERP et Magento :<br/>
-                    Création et mise à jour des produits<br/>
-                    Synchronisation des commandes, avoirs, clients...</p>
-
-                    <p class="small-font regular white">Environnement technique :<br/>
-                    <i>Python, Framework OpenObject, Postgresql, HTML,<br/>
-                    CSS, Javascript, PHP, SVN, Eclipse, Ubuntu</i></p>
-
-                    <a href="#" class="small-font green">En savoir plus</a>
-
-                    <!-- 6e paragraphe-->
-
-                    <h2 class="title-desc semi-bold white septop" id="etudesRon">ÉTUDES</h2>
-
-                    <p class="regular white medium-font">
-                    <span class="green">ENI ECOLE INFORMATIQUE</span><br/>
-                    Nantes, France<br/>
-                    Sept. 2009 - Juil. 2011</p>
-
-                    <p class="small-font regular white sep">Maîtrise de Concepteur Développeur Informatique <br/>
-                    Formation en contrat de professionnalisation</p>
-
-                    <!-- 7e paragraphe-->
-
-                    <p class="regular white medium-font">
-                    <span class="green">RÉSEAU INSTITUTS SUPÉRIEUR DE L'ENTREPRISE</span><br/>
-                    Nantes, France<br/>
-                    Sept. 2007 - Juin 2009</p>
-
-                    <p class="small-font regular white sep">BTS (Brevet de Technicien Supérieur) Informatique de Gestion</p>
-
-                    <!-- 8e paragraphe-->
-
-                    <p class="regular white medium-font">
-                    <span class="green">LYCÉE DE KERNEUZEC</span><br/>
-                    Quimperlé, France<br/>
-                    Juillet 2015</p>
-
-                    <p class="small-font regular white">Baccalauréat Scientifique</p>
-
-                    <!-- 9e paragraphe-->
-
-                    <h2 class="title-desc semi-bold white septop" id="diversRon">DIVERS</h2>
-
-                    <p class="regular medium-font green">LANGUES</p>
-
-                    <p class="medium-font regular white">Français<br/>
-                    <span class="small-font">Langue maternelle</span></p>
-
-                    <p class="medium-font regular white">Anglais<br/>
-                    <span class="small-font">Technique</span>
-
-                    <p class="medium-font regular white">Espagnol<br/>
-                    <span class="small-font">Notions</span></p>
-
-                    <!-- 10e paragraphe-->
-
-                    <div class="septop">
-                        <a href="#" class="btn">contacter Ronan </a>
-                    </div>
-                </div>
-            </li>
-        
+            {% endif %}
+            {% set i = i+1 %}
+            {% endfor %}
+        </ul>
+        {% else %}
+            <h3>Aucun CV n'existe</h3>
+        {% endif %}
     </div>
 </div>
 

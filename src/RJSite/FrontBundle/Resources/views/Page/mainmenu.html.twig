@@ -1,13 +1,7 @@
 {# src/RJSite/FrontBundle/Resources/views/Page/mainmenu.html.twig #}
 <nav class="header desktop">
     <a href="{{ path('rj_site_front.page.homepage') }}"><h1 class="bold green">ju & ron <span class="regular">[cherchent un job] à montréal</span></h1></a>
-    <ul>
-        {% for item in menuItems %}
-            <li>
-                <a class="bold {{ item.class }}" href="{{ item.link }}">{{ item.title }}</a>
-            </li>
-        {% endfor %}
-    </ul>
+    {{ knp_menu_render('main', {'leaf_class': 'bold'}) }}
 </nav>
 <nav class="header mobile">
     <a href="{{ path('rj_site_front.page.homepage') }}"><h1 class="link bold green">ju & ron <span class="regular">[cherchent un job] à montréal</span></h1></a>
@@ -16,11 +10,7 @@
         <span class="line line-2"></span>
         <span class="line line-3"></span>
     </a>
-    <ul class="left-menu">
-    {% for item in menuItems %}
-        <li>
-            <a class="bold {{ item.class }}" href="{{ item.link }}">{{ item.title }}</a>
-        </li>
-    {% endfor %}
-    </ul>
+{#     Changement de classe pour le <ul> du menu mobile#}
+    {% set menuItem = knp_menu_get('main', [], {'rootClass': 'left-menu'}) %}
+    {{ knp_menu_render(menuItem) }}
 </nav>

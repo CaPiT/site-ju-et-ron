@@ -8,6 +8,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class ExperienceType extends AbstractType
@@ -22,10 +23,17 @@ class ExperienceType extends AbstractType
             ->add('title', TextType::class)
             ->add('company', TextType::class, array('required' => false))
             ->add('location', TextType::class, array('required' => false))
-            ->add('content', TextareaType::class)
+//             ->add('content', TextareaType::class)
+            ->add('content', TextareaType::class, array(
+                'attr' => array(
+                    'class' => 'tinymce',
+                    'data-theme' => 'bbcode' // Skip it if you want to use default theme
+                    )
+                )
+            )
             ->add('link', TextType::class, array('required' => false))
-            ->add('start_at', DateType::class, array('required' => false))
-            ->add('end_date', DateType::class, array('required' => false))
+            ->add('start_at', BirthdayType::class, array('required' => false))
+            ->add('end_date', BirthdayType::class, array('required' => false))
 //             ->add('section')
             ->add('save', SubmitType::class)
         ;

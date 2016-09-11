@@ -25,8 +25,22 @@
             <div class="panel-heading">
                 <h3 class="panel-title">{% if experience is defined %}Modifier{% else %}Ajouter{% endif %} une expérience</h3>
             </div>
+            
             <div class="panel-body">    
             {{ form(form) }}
+{#             {{ tinymce_init({'use_callback_tinymce_init': true, 'theme': {'simple': {'menubar': false}}}) }}#}
+            {{ tinymce_init({
+                'theme': {'simple':{'language': 'fr_FR', 'height': 300, 'menubar': false, 
+                    'plugins' : 'code',
+                    'toolbar': "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image code" }},
+                })
+            }}
+{#             {{ tinymce_init() }}#}
+{#             {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}#}
+{#             {{ form_row(form.title) }}#}
+{#             {{ form_rest(form) }}#}
+
+{#             {{ form_end(form) }}#}
             </div>
         </div>
     </div>

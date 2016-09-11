@@ -23,12 +23,12 @@
 		$( ".border-link" ).after().css( "height", heightViewport+"px" );
 
 		    
-		var idTravailJ = $('#travailJustine').offset().top;
-		var idTravailR = $('#travailRon').offset().top;
-		var idEtudesJ = $('#etudesJustine').offset().top;
-		var idEtudesR = $('#etudesRon').offset().top;
+		var idTravailJ = $('#expérienceprofessionnelleJustine').offset().top;
+		var idTravailR = $('#expérienceprofessionnelleRonan').offset().top;
+		var idEtudesJ = $('#étudesJustine').offset().top;
+		var idEtudesR = $('#étudesRonan').offset().top;
 		var idDiversJ = $('#diversJustine').offset().top;
-		var idDiversR = $('#diversRon').offset().top;
+		var idDiversR = $('#diversRonan').offset().top;
 
 	};
     

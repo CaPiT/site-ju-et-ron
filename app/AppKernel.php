@@ -19,6 +19,9 @@ class AppKernel extends Kernel
             new RJSite\ContactBundle\RJSiteContactBundle(),
             new RJSite\AdminBundle\RJSiteAdminBundle(),
             new RJSite\FrontBundle\RJSiteFrontBundle(),
+            new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+//             new FOS\UserBundle\FOSUserBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

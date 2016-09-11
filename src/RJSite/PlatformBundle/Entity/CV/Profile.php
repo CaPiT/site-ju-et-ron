@@ -161,6 +161,16 @@ class Profile
 
         return $this;
     }
+    
+    /**
+     * Get firstname
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->firstname . ' ' . $this->lastname;
+    }
 
     /**
      * Get lastname
@@ -194,6 +204,17 @@ class Profile
     public function getDob()
     {
         return $this->dob;
+    }
+    
+    /**
+     * Get firstname
+     *
+     * @return string
+     */
+    public function getAge()
+    {
+        $now = new \Datetime();
+        return $now->format("Y") - $this->dob->format("Y");
     }
 
     /**
